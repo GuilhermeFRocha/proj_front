@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { register } from "../../api";
+import { Button, Container, Input, LoginForm, Title } from "./styles";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -7,25 +10,32 @@ export const Register = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    register({ username, password });
+    try {
+      await register({ username, password });
+    } catch (error) {
+      console.error("Login error:", error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Register</button>
-    </form>
+    <Container>
+      <LoginForm onSubmit={handleSubmit}>
+        <Title>Register</Title>
+        <Input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button type="submit">Register</Button>
+      </LoginForm>
+      <ToastContainer />
+    </Container>
   );
 };

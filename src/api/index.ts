@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 interface LoginData {
   username: string;
@@ -17,9 +18,9 @@ export const login = async ({ username, password }: LoginData) => {
       password,
     });
     localStorage.setItem("token", response.data.token);
-    alert("Login successful");
+    toast.success("Login successful!");
   } catch (err) {
-    alert("Invalid credentials");
+    toast.error("Login failed. Please check your credentials.");
   }
 };
 
@@ -29,8 +30,8 @@ export const register = async ({ username, password }: RegisterData) => {
       username,
       password,
     });
-    alert("User registered successfully");
+    toast.success("Register successful!");
   } catch (err) {
-    alert("Error registering user");
+    toast.error("Register failed. Please check your credentials.");
   }
 };
