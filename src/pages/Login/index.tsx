@@ -1,26 +1,18 @@
-import { useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { login } from "../../api";
 
-export const Register = () => {
+export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:5000/register", {
-        username,
-        password,
-      });
-      alert("User registered successfully");
-    } catch (err) {
-      alert("Error registering user");
-    }
+    login({ username, password });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
+      <h2>Login</h2>
       <input
         type="text"
         placeholder="Username"
@@ -33,7 +25,7 @@ export const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
   );
 };

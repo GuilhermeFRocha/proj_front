@@ -1,124 +1,207 @@
+@import url("https://use.typekit.net/mdu2tqc.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f2f2f3;
+  -webkit-transition-delay: 9999s;
+  transition-delay: 9999s;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
 html,
+body {
+  background-color: #1c2023;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+}
+
+/* html,
 body,
-div,
-span,
-applet,
-object,
-iframe,
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
+span,
 i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+b,
+textarea {
+	font-family: 'aaux-next', sans-serif;
+} */
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1c2023;
 }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f2f2f3;
+  -webkit-box-shadow: 0 0 0px 1000px #1c2023 inset;
+}
+
+.button-row-show-on-hover {
+  display: none !important;
+}
+
+.MuiMenu-list {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+#js-licensing {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  #modal-content-box {
+    width: 90% !important;
+  }
+}
+
+.content-terms {
+  padding: 20px;
+  padding-top: 10px;
+  background-color: #1c2023 !important;
+  color: #f2f2f3 !important;
+  font-size: 11px !important;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.content-terms a {
+  color: #f2f2f3 !important;
+  font-weight: bold;
+}
+
+.content-terms a:hover {
+  color: #f2f2f3 !important;
+}
+
+.button-row-show-on-hover {
+  display: none;
+}
+
+.container_box-webview {
+  max-width: fit-content;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  html {
+    overscroll-behavior: none;
+  }
+  div[vw] {
+    position: absolute !important;
+    top: 64px !important;
+  }
+  .lesson-container {
+    min-height: 100vh !important;
+    max-width: 100vw !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    overscroll-behavior-y: contain;
+  }
+  div[vw] {
+    position: absolute !important;
+    top: 96px !important;
+  }
+  .lesson-container {
+    min-height: 100vh !important;
+    max-width: 100vw !important;
+  }
+}
+
 body {
-  line-height: 1;
+  overscroll-behavior-y: none !important;
+  overflow: auto !important;
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
 }
-ol,
-ul {
-  list-style: none;
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
-blockquote,
-q {
-  quotes: none;
+
+.fade-out {
+  animation: fadeOut 1s forwards;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+
+/* WorkSansFont.css */
+/* @font-face {
+	font-family: 'Work Sans';
+	src: url('assets/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+} */
+
+/* WorkSansFont.css */
+/* @font-face {
+	font-family: 'aaux-next';
+	src: url('assets/fonts/Aaux_Next/aauxnextltwebfont.otf') format('opentype'),
+	url('assets/fonts/Aaux_Next/aauxnextmdwebfont.otf') format('opentype'),
+	url('assets/fonts/Aaux_Next/aauxnextbdwebfont.otf') format('opentype'),
+	url('assets/fonts/Aaux_Next/AauxNextBlk.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+} */
