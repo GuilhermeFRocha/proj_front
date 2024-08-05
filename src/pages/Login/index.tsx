@@ -12,6 +12,7 @@ export const Login = () => {
     e.preventDefault();
     try {
       await login({ username, password });
+      window.location.href = "/home";
     } catch (error) {
       console.error("Login error:", error);
     }
